@@ -1,0 +1,12 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space # space, tab
+indent_size = 2 # 2 spaces per indentation-level
+end_of_line = lf # lf, crlf, cr
+charset = utf-8 # utf-8 with BOM
+trim_trailing_whitespace = true # remove trailing whitespace at each line
+insert_final_newline = false # insert a newline at the end of file if it doesn't exist

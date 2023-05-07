@@ -1,0 +1,52 @@
+# @see: https://stylelint.io/user-guide/rules 英文文档
+# @see: https://www.stylelint.com.cn/user-guide/rules 中文文档
+root: true
+# 扩展
+extends:
+  - stylelint-config-standard
+  - stylelint-config-html/vue
+  - stylelint-config-standard-scss
+  - stylelint-config-recommended-vue/scss
+  - stylelint-config-recess-order
+# 语法解析器
+overrides:
+  - files: ['**/*.{vue,css,scss,html}']
+    customSyntax: 'postcss-html'
+# 忽略文件
+ignoreFiles:
+  - node_modules/**
+  - dist/**
+# @see: https://www.stylelint.com.cn/user-guide/rules/{{ruleName}}
+rules:
+  # url()中的路径使用引号
+  function-url-quotes: 'always'
+  # 十六进制颜色值使用长格式
+  color-hex-length: 'short'
+  # 要求或不允许规则前的空行
+  rule-empty-line-before: 'never'
+  # 字体族名称中不允许使用通用字体族关键字
+  font-family-no-missing-generic-family-keyword: null
+  # 导入语句中不允许使用文件扩展名
+  scss/at-import-partial-extension: null
+  # 不允许使用未知属性
+  property-no-unknown: null
+  # 不允许空的来源
+  no-empty-source: null
+  # 选择器类模式
+  selector-class-pattern: null
+  # 不允许值使用供应商前缀
+  value-no-vendor-prefix: null
+  # 值关键字大小写
+  value-keyword-case: null
+  # 选择器id模式
+  selector-id-pattern: null
+  # 不允许使用未知的伪类选择器
+  selector-pseudo-class-no-unknown: [true, { ignorePseudoClasses: ['global', 'v-deep', 'deep'] }]
+  # 不允许使用未知的@规则
+  at-rule-no-unknown: [true, { ignoreAtRules: ['mixin', 'extend', 'content', 'include', 'for', 'if', 'else', 'each', 'function', 'return', 'tailwind', 'apply', 'variants', 'responsive', 'screen'] }]
+  # 声明块尾部分号
+  declaration-block-trailing-semicolon: null
+  # 不允许低特异性
+  no-descending-specificity: null
+  # 不允许运算符之间有空格
+  scss/operator-no-unspaced: null

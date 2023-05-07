@@ -1,0 +1,28 @@
+[
+  {
+    "icon": "home",
+    "id": "1",
+    "name": "首页",
+    "path": "/"
+  },
+  {
+    "icon": "svg",
+    "id": "2",
+    "name": "预览Svg",
+    "path": "/previewSvg"
+  },
+  {
+    "icon": "share-sys",
+    "id": "3",
+    "name": "测试3",
+    "path": null,
+    "children": [
+      {
+        "icon": "",
+        "id": "3-1",
+        "name": "测试3-1",
+        "path": null
+      }
+    ]
+  }
+]
