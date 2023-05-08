@@ -8,7 +8,7 @@
       "src/views/Error/404-legacy.vue",
       "src/views/Error/404-legacy.vue"
     ],
-    "file": "assets/index-legacy-c3d34d56.js",
+    "file": "assets/index-legacy-357dc4c2.js",
     "isEntry": true,
     "src": "index-legacy.html"
   },
@@ -28,12 +28,12 @@
       "src/views/Error/404.vue",
       "src/views/Error/404.vue"
     ],
-    "file": "assets/index-4ce6ac25.js",
+    "file": "assets/index-4bff74fb.js",
     "isEntry": true,
     "src": "index.html"
   },
   "src/views/Error/404-legacy.vue": {
-    "file": "assets/404-legacy-20b92056.js",
+    "file": "assets/404-legacy-0618c3b7.js",
     "imports": [
       "index-legacy.html"
     ],
@@ -41,7 +41,7 @@
     "src": "src/views/Error/404-legacy.vue"
   },
   "src/views/Error/404.vue": {
-    "file": "assets/404-882e4ded.js",
+    "file": "assets/404-8978aa20.js",
     "imports": [
       "index.html"
     ],
@@ -49,7 +49,7 @@
     "src": "src/views/Error/404.vue"
   },
   "src/views/Home/index-legacy.vue": {
-    "file": "assets/index-legacy-c43892e4.js",
+    "file": "assets/index-legacy-13eae53f.js",
     "imports": [
       "index-legacy.html"
     ],
@@ -57,7 +57,7 @@
     "src": "src/views/Home/index-legacy.vue"
   },
   "src/views/Home/index.vue": {
-    "file": "assets/index-0b2af583.js",
+    "file": "assets/index-29612576.js",
     "imports": [
       "index.html"
     ],
@@ -65,7 +65,7 @@
     "src": "src/views/Home/index.vue"
   },
   "src/views/Login/index-legacy.vue": {
-    "file": "assets/index-legacy-ae74f46d.js",
+    "file": "assets/index-legacy-36c56884.js",
     "imports": [
       "index-legacy.html"
     ],
@@ -73,14 +73,14 @@
     "src": "src/views/Login/index-legacy.vue"
   },
   "src/views/Login/index.css": {
-    "file": "assets/index-413ef741.css",
+    "file": "assets/index-e9907915.css",
     "src": "src/views/Login/index.css"
   },
   "src/views/Login/index.vue": {
     "css": [
-      "assets/index-413ef741.css"
+      "assets/index-e9907915.css"
     ],
-    "file": "assets/index-954ccd6f.js",
+    "file": "assets/index-676e798e.js",
     "imports": [
       "index.html"
     ],
@@ -88,7 +88,7 @@
     "src": "src/views/Login/index.vue"
   },
   "src/views/PreviewSvg/index-legacy.vue": {
-    "file": "assets/index-legacy-97ae9d4f.js",
+    "file": "assets/index-legacy-f15eeeb4.js",
     "imports": [
       "index-legacy.html"
     ],
@@ -103,7 +103,7 @@
     "css": [
       "assets/index-ed9ebf6b.css"
     ],
-    "file": "assets/index-7ae4181c.js",
+    "file": "assets/index-df74111a.js",
     "imports": [
       "index.html"
     ],
@@ -111,7 +111,7 @@
     "src": "src/views/PreviewSvg/index.vue"
   },
   "src/views/redirect-legacy.vue": {
-    "file": "assets/redirect-legacy-8186bfa7.js",
+    "file": "assets/redirect-legacy-33eb1f24.js",
     "imports": [
       "index-legacy.html"
     ],
@@ -119,7 +119,7 @@
     "src": "src/views/redirect-legacy.vue"
   },
   "src/views/redirect.vue": {
-    "file": "assets/redirect-6c4a5552.js",
+    "file": "assets/redirect-e2f574a4.js",
     "imports": [
       "index.html"
     ],
