@@ -5,10 +5,10 @@ const globalStore = useGlobalStore()
 const router = useRouter()
 const setT = () => {
   router.push({ path: '/' })
-  globalStore.setGlobalState('token', 'wqeweqewq')
+  globalStore.setGlobalState('token', 'token')
 }
 const userLoginForm = reactive({
-  username: '',
+  userName: '',
   password: '',
 })
 </script>
@@ -19,7 +19,7 @@ const userLoginForm = reactive({
         <el-card class="el-card">
           <h2>欢迎登录</h2>
           <form class="login" action="">
-            <input type="text" v-model="userLoginForm.username" placeholder="请输入账号" />
+            <input type="text" v-model="userLoginForm.userName" placeholder="请输入账号" />
             <input type="password" v-model="userLoginForm.password" placeholder="请输入密码" />
           </form>
           <div id="btn">

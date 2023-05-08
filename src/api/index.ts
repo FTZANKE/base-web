@@ -2,7 +2,8 @@ import Request from '@/hooks/useRequest'
 
 export function getContractOrderPageInfo(data: object) {
   return Request({
-    url: '/notary/public/contract/order/getContractOrderPageInfo',
+    baseURL: '/api',
+    url: '/public/auth/login',
     method: 'post',
     data,
   })

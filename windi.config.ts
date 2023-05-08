@@ -1,3 +1,4 @@
+/** @type {import('windicss').Config} */
 // https://cn.windicss.org/guide/
 import { defineConfig } from 'vite-plugin-windicss'
 import { transform } from 'windicss/helpers'

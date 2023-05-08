@@ -12,7 +12,7 @@ import Legacy from '@vitejs/plugin-legacy'
 
 const path = require('path')
 
-// https://vitejs.dev/config/
+// https://cn.vitejs.dev/config/
 export default ({ mode }: ConfigEnv) => {
   const ENV = { ...loadEnv(mode, process.cwd()), root: process.cwd() } as any
   console.log(ENV)
@@ -80,6 +80,7 @@ export default ({ mode }: ConfigEnv) => {
         '/api': {
           target: ENV.VITE_APP_BASE_API_URL,
           changeOrigin: true,
+          secure: false,
           rewrite: path => path.replace(/^\/api/, ''),
         },
       },

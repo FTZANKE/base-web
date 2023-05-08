@@ -22,9 +22,9 @@ interface _AxiosRequestConfig extends AxiosRequestConfig {
   ignoreCRMsg?: string
 }
 const $ContentType = {
-  json: 'application/json;charset=UTF-8',
-  form: 'application/x-www-form-urlencoded;charset=UTF-8',
-  file: 'multipart/form-data;charset=UTF-8',
+  json: 'application/json',
+  form: 'application/x-www-form-urlencoded',
+  file: 'multipart/form-data',
 }
 const Request = axios.create() as AxiosInstance
 const CancelToken = axios.CancelToken as CancelTokenStatic
@@ -34,7 +34,7 @@ Request.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     console.log(config)
     config.headers['Content-Type'] = $ContentType[hasOwnDefault(config, 'contentType', 'json')]
-    config.baseURL = hasOwnDefault(config, 'baseURL', import.meta.env.VITE_APP_BASE_API_URL)
+    config.baseURL = hasOwnDefault(config, 'baseURL', '/api')
     if (hasOwnDefault(config, 'ignoreToken', true)) config.headers.token = globalStore.token
     if (hasOwn(config, 'extendHeaders')) config.headers = { ...config.headers, ...hasOwnDefault(config, 'extendHeaders', {}) }
     if (!hasOwnDefault(config, 'ignoreLoading', true)) globalStore.setGlobalState('loading', true)
