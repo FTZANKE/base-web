@@ -5,7 +5,7 @@ export default {
   ...VxeTableZhCN,
   elPlus: ElementPlusZhCn,
   languages: {
-    zh_CN: '切换简体中文',
-    en_US: '切换英语（美国）',
+    zh_CN: '简体中文',
+    en_US: '英语（美国）',
   },
 }

@@ -1,0 +1,4 @@
+// 去掉箭头
+.el-popper[data-popper-placement^='bottom'] > .el-popper__arrow {
+  display: none;
+}

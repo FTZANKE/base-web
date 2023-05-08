@@ -5,7 +5,7 @@ export default {
   ...VxeTableEnUS,
   elPlus: ElementPlusEn,
   languages: {
-    zh_CN: 'Switching simplified Chinese',
-    en_US: 'Switch English (US)',
+    zh_CN: 'Simplified Chinese',
+    en_US: 'English (US)',
   },
 }
