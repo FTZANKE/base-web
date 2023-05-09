@@ -14,33 +14,34 @@ const path = require('path')
 
 // https://cn.vitejs.dev/config/
 export default ({ mode }: ConfigEnv) => {
-  const ENV = { ...loadEnv(mode, process.cwd()), root: process.cwd() } as any
+  const root = process.cwd() as string
+  const ENV = { ...loadEnv(mode, process.cwd()) } as ImportMetaEnv
   console.log(ENV)
   console.log(`\x1B[31m当前环境：${ENV.VITE_APP_ENV}\x1B[0m`)
 
   return defineConfig({
-    root: ENV.root, // 项目根目录
+    root, // 项目根目录
     base: ENV.VITE_APP_BASE_URL, // 生产环境下的公共路径
     plugins: [
       vue(), // Vue 3 插件
       Components({
         resolvers: [ElementPlusResolver()], // 自动导入的组件解析器
         extensions: ['vue'], // 自动导入的组件文件后缀
-        dts: path.resolve(ENV.root, 'src/types/global-components.d.ts'), // 自动导入的组件类型声明文件
+        dts: path.resolve(root, 'src/types/global-components.d.ts'), // 自动导入的组件类型声明文件
       }), // 自动导入组件插件
       AutoImport({
         resolvers: [ElementPlusResolver()], // 自动导入的组件解析器
         imports: ['vue', '@vueuse/core', 'vue-router', 'pinia', 'vue-i18n'], // 自动导入的组件
         include: [/\.[tj]sx?$/, /\.vue$/], // 自动导入的组件文件后缀
-        dts: path.resolve(ENV.root, 'src/types/auto-imports.d.ts'), // 自动导入的组件类型声明文件
+        dts: path.resolve(root, 'src/types/auto-imports.d.ts'), // 自动导入的组件类型声明文件
         eslintrc: {
           enabled: true, // 是否启用eslint
-          filepath: path.resolve(ENV.root, 'src/types/.eslintrc-auto-import.json'), // eslint配置文件
+          filepath: path.resolve(root, 'src/types/.eslintrc-auto-import.json'), // eslint配置文件
           globalsPropValue: true, // 是否启用全局变量
         }, // eslint配置
       }), // 自动导入依赖插件
       createSvgIconsPlugin({
-        iconDirs: [path.resolve(ENV.root, 'src/assets/icons')],
+        iconDirs: [path.resolve(root, 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]',
       }), // svg图标插件
       VueJsx(), // Vue 3 jsx插件

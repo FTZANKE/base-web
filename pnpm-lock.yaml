@@ -72,9 +72,6 @@ devDependencies:
   '@windicss/plugin-scrollbar':
     specifier: ^1.2.3
     version: 1.2.3
-  consola:
-    specifier: ^3.1.0
-    version: 3.1.0
   eslint:
     specifier: ^8.40.0
     version: 8.40.0
@@ -3405,10 +3402,6 @@ packages:
       utils-merge: 1.0.1
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /consola@3.1.0:
-    resolution: {integrity: sha512-rrrJE6rP0qzl/Srg+C9x/AE5Kxfux7reVm1Wh0wCjuXvih6DqZgqDZe8auTD28fzJ9TF0mHlSDrPpWlujQRo1Q==}
     dev: true
 
   /conventional-changelog-angular@5.0.13:
