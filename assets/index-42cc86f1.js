@@ -1,0 +1,1 @@
+import{aW as a,Z as s,_ as n,aT as e}from"./index-7f8e30dd.js";const t=a({},[["render",function(a,t){const i=e;return s(),n(i,{name:"loading",class:"animate-spin",size:"70"})}]]);export{t as default};
