@@ -4,7 +4,7 @@ import svgNames from 'virtual:svg-icons-names'
 const svgName = (value: string): string => value.replace(/^icon-/, '')
 </script>
 <template>
-  <el-table :data="svgNames" style="width: 100%" height="calc(100vh - 150px)">
+  <el-table :data="svgNames" style="width: 100%" height="calc(100vh - 150px)" row-class-name="preview">
     <el-table-column type="index" :label="'序号(' + svgNames.length + ')'" width="100" align="center" />
     <el-table-column label="预览" align="center" width="100">
       <template #default="scope">
@@ -16,4 +16,12 @@ const svgName = (value: string): string => value.replace(/^icon-/, '')
     </el-table-column>
   </el-table>
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.preview {
+  &:hover {
+    .animate-spin {
+      @apply animate-none;
+    }
+  }
+}
+</style>

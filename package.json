@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --mode=development --force",
     "build": "vue-tsc && vite build --mode=production",
-    "preview": "vite preview --mode=production",
+    "preview": "vite preview --mode=production --force",
     "lint:prettier": "prettier --write .",
     "lint:eslint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "lint:stylelint": "stylelint \"**/*.{vue,css,scss,html}\"  --fix --cache --cache-location node_modules/.cache/stylelint/ --allow-empty-input",

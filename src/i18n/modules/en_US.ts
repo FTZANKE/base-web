@@ -8,4 +8,11 @@ export default {
     zh_CN: 'Simplified Chinese',
     en_US: 'English (US)',
   },
+  logout: 'Log Out',
+  switchLanguage: {
+    switchingLanguage: 'Switching Language',
+    switchLanguageSuccess: 'Switch language success',
+    currentLanguage: 'The current language is',
+    switchMSG: `@:switchLanguage.switchLanguageSuccess{','} @:switchLanguage.currentLanguage {lang}`,
+  },
 }

@@ -31,10 +31,6 @@ router.beforeEach((to, from, next) => {
   NProgress.start()
   useTitle(String(to.meta.title || ''))
   const globalStore = useGlobalStore()
-  console.log(to, from)
-  console.log(globalStore.token, to.path)
-  console.log(!globalStore.token && to.path !== '/login')
-  console.log(!!globalStore.token && to.path === '/login')
 
   // 未登录跳转登录页
   if (!globalStore.token && to.path !== '/login') next({ path: '/login', replace: true })

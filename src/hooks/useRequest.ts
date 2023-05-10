@@ -6,7 +6,7 @@ import { ElMessage } from 'element-plus'
  * @description: 请求配置
  * @param {extendHeaders} {[key: string]: string} 扩展请求头用于不满足默认的 Content-Type、token 请求头的情况
  * @param {ignoreLoading} boolean 是否忽略 loading 默认 false
- * @param {ignoreToken} boolean 是否忽略 token 默认 false
+ * @param {token} boolean 是否携带 token 默认 true
  * @param {ignoreCR} boolean 是否取消请求 默认 false
  * @param {ignoreCRMsg} string 取消请求的提示信息 默认 Request canceled
  * @param {contentType} $ContentType 重新定义 Content-Type 默认 json
@@ -17,7 +17,7 @@ import { ElMessage } from 'element-plus'
 interface _AxiosRequestConfig extends AxiosRequestConfig {
   extendHeaders?: { [key: string]: string }
   ignoreLoading?: boolean
-  ignoreToken?: boolean
+  token?: boolean
   ignoreCR?: boolean
   ignoreCRMsg?: string
 }
@@ -32,16 +32,23 @@ const source = CancelToken.source() as { cancel: (arg0: string) => void; token: 
 const globalStore = useGlobalStore()
 Request.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    console.log(config)
-    config.headers['Content-Type'] = $ContentType[hasOwnDefault(config, 'contentType', 'json')]
+    globalStore.setGlobalState('loading', !hasOwnDefault(config, 'ignoreLoading', true))
     config.baseURL = hasOwnDefault(config, 'baseURL', '/api')
-    if (hasOwnDefault(config, 'ignoreToken', true)) config.headers.token = globalStore.token
-    if (hasOwn(config, 'extendHeaders')) config.headers = { ...config.headers, ...hasOwnDefault(config, 'extendHeaders', {}) }
-    if (!hasOwnDefault(config, 'ignoreLoading', true)) globalStore.setGlobalState('loading', true)
+    config.headers = {
+      ...config.headers,
+      ...{
+        'Content-Type': $ContentType[hasOwnDefault(config, 'Content-Type', 'json')],
+        'token': globalStore.token,
+      },
+      ...hasOwnDefault(config, 'extendHeaders', {}),
+    }
+    hasOwnDefault(config, 'token', true) && (config.headers.token = globalStore.token)
+    config.data = config.data || {}
+    config.params = config.params || {}
     config.timeout = hasOwnDefault(config, 'timeout', 10000)
     config.cancelToken = source.token
     config.withCredentials = true
-    if (hasOwnDefault(config, 'ignoreCR', false)) source.cancel(hasOwnDefault(config, 'ignoreCRMsg', 'Request canceled'))
+    hasOwnDefault(config, 'ignoreCR', false) && source.cancel(hasOwnDefault(config, 'ignoreCRMsg', 'Request canceled'))
     return config
   },
   (error: AxiosError) => {

@@ -1,20 +1,4 @@
 {
-  "recommendations": [
-    "editorconfig.editorconfig",
-    "eamodio.gitlens",
-    "vue.vscode-typescript-vue-plugin",
-    "esbenp.prettier-vscode",
-    "alefragnani.bookmarks",
-    "steoates.autoimport",
-    "dbaeumer.vscode-eslint",
-    "formulahendry.auto-rename-tag",
-    "codezombiech.gitignore",
-    "formulahendry.auto-close-tag",
-    "christian-kohler.path-intellisense",
-    "christian-kohler.npm-intellisense",
-    "vue.volar",
-    "hollowtree.vue-snippets",
-    "stylelint.vscode-stylelint"
-  ],
+  "recommendations": ["editorconfig.editorconfig", "eamodio.gitlens", "vue.vscode-typescript-vue-plugin", "esbenp.prettier-vscode", "dbaeumer.vscode-eslint", "formulahendry.auto-rename-tag", "christian-kohler.path-intellisense", "christian-kohler.npm-intellisense", "vue.volar", "stylelint.vscode-stylelint"],
   "unwantedRecommendations": ["octref.vetur"]
 }

@@ -1,4 +1,18 @@
-// 去掉箭头
-.el-popper[data-popper-placement^='bottom'] > .el-popper__arrow {
-  display: none;
+.el-popper {
+  border-radius: 16px;
+  overflow: hidden;
+
+  .el-dropdown-menu {
+    padding: 7px;
+
+    .el-dropdown-menu__item {
+      border-radius: 8px;
+    }
+  }
+}
+
+.el-dropdown {
+  * {
+    outline: none;
+  }
 }

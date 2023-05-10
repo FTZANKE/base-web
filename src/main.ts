@@ -10,9 +10,4 @@ import 'virtual:svg-icons-register'
 import '@/assets/styles/index.scss'
 import i18n from '@/i18n'
 
-const app = createApp(App)
-app.use(i18n)
-app.use(router)
-app.use(components)
-app.use(pinia)
-app.mount('#app')
+createApp(App).use(i18n).use(router).use(components).use(pinia).mount('#app')

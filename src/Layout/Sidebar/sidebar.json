@@ -14,14 +14,30 @@
   {
     "icon": "share-sys",
     "id": "3",
-    "name": "测试3",
+    "name": "深度测试",
     "path": null,
     "children": [
       {
         "icon": "",
         "id": "3-1",
-        "name": "测试3-1",
-        "path": null
+        "name": "3-1",
+        "path": null,
+        "children": [
+          {
+            "icon": "",
+            "id": "3-1-1",
+            "name": "3-1-1",
+            "path": null,
+            "children": [
+              {
+                "icon": "",
+                "id": "3-1-1-1",
+                "name": "3-1-1-1",
+                "path": null
+              }
+            ]
+          }
+        ]
       }
     ]
   }
