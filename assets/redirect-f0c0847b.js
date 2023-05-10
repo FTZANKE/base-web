@@ -1,1 +1,0 @@
-import{W as a,aU as e,aV as r}from"./index-7f8e30dd.js";const t=a({name:"Redirect"}),s=a({...t,setup(a){const{params:t,query:s}=e();return r().replace({path:"/"+t.path,query:s}),()=>{}}});export{s as default};

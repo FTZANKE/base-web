@@ -1,0 +1,1 @@
+System.register(["./index-legacy-87098578.js"],(function(e,t){"use strict";var r,a,s;return{setters:[e=>{r=e.W,a=e.aV,s=e.aW}],execute:function(){const t=r({name:"Redirect"});e("default",r({...t,setup(e){const{params:t,query:r}=a();return s().replace({path:"/"+t.path,query:r}),()=>{}}}))}}}));

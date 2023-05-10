@@ -1,1 +1,0 @@
-System.register(["./index-legacy-132db38e.js"],(function(e,n){"use strict";var t,s,r,a;return{setters:[e=>{t=e.aW,s=e.Z,r=e._,a=e.aT}],execute:function(){e("default",t({},[["render",function(e,n){const t=a;return s(),r(t,{name:"loading",class:"animate-spin",size:"70"})}]]))}}}));
