@@ -1,1 +1,0 @@
-import{W as a,aV as e,aW as r}from"./index-bd790747.js";const t=a({name:"Redirect"}),s=a({...t,setup(a){const{params:t,query:s}=e();return r().replace({path:"/"+t.path,query:s}),()=>{}}});export{s as default};

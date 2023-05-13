@@ -1,0 +1,1 @@
+System.register(["./index-legacy-fdac3118.js"],(function(e,t){"use strict";var r,a,n;return{setters:[e=>{r=e.V,a=e.aU,n=e.aV}],execute:function(){e("default",r({name:"Redirect",__name:"redirect",setup(e){const{params:t,query:r}=a();return n().replace({path:"/"+t.path,query:r}),()=>{}}}))}}}));

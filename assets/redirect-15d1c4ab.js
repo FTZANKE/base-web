@@ -1,0 +1,1 @@
+import{V as e,aU as a,aV as r}from"./index-f4d4fb3e.js";const t=e({name:"Redirect",__name:"redirect",setup(e){const{params:t,query:s}=a();return r().replace({path:"/"+t.path,query:s}),()=>{}}});export{t as default};

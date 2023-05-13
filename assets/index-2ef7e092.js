@@ -1,0 +1,1 @@
+import{aT as a,Z as s,Y as n,aS as e}from"./index-f4d4fb3e.js";const t=a({},[["render",function(a,t){const i=e;return n(),s(i,{name:"loading",class:"animate-spin",size:"70"})}]]);export{t as default};
