@@ -6,7 +6,6 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import WindiCSS from 'vite-plugin-windicss'
 import Legacy from '@vitejs/plugin-legacy'
 
@@ -26,12 +25,11 @@ export default ({ mode }: ConfigEnv) => {
       vue(), // Vue 3 插件
       Components({
         resolvers: [ElementPlusResolver()], // 自动导入的组件解析器
-        extensions: ['vue'], // 自动导入的组件文件后缀
         dts: path.resolve(root, 'src/types/global-components.d.ts'), // 自动导入的组件类型声明文件
       }), // 自动导入组件插件
       AutoImport({
         resolvers: [ElementPlusResolver()], // 自动导入的组件解析器
-        imports: ['vue', '@vueuse/core', 'vue-router', 'pinia', 'vue-i18n'], // 自动导入的组件
+        imports: [], // 自动导入的组件
         include: [/\.[tj]sx?$/, /\.vue$/], // 自动导入的组件文件后缀
         dts: path.resolve(root, 'src/types/auto-imports.d.ts'), // 自动导入的组件类型声明文件
         eslintrc: {
@@ -45,7 +43,6 @@ export default ({ mode }: ConfigEnv) => {
         symbolId: 'icon-[dir]-[name]',
       }), // svg图标插件
       VueJsx(), // Vue 3 jsx插件
-      VueSetupExtend(), // Vue 3 setup插件
       WindiCSS(), // windicss插件
       Legacy({
         targets: ['defaults', 'not IE 11'],

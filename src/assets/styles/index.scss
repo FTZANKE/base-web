@@ -15,7 +15,8 @@ html {
     #app {
       height: 100%;
     }
-
-    @import './reset';
   }
 }
+
+@import './element-plus';
+@import './reset';

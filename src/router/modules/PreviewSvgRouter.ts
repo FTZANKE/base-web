@@ -1,7 +1,7 @@
-import { RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import Layout from '@/Layout/index.vue'
 
-const PreviewSvgRoutes: RouteRecordRaw[] = [
+const PreviewSvgRouter: RouteRecordRaw[] = [
   {
     path: '/previewSvg',
     redirect: '/previewSvg/viewSvg',
@@ -17,4 +17,4 @@ const PreviewSvgRoutes: RouteRecordRaw[] = [
   },
 ]
 
-export default PreviewSvgRoutes
+export default PreviewSvgRouter

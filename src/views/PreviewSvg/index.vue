@@ -1,5 +1,7 @@
-<script setup lang="ts" name="ViewSvg">
+<script setup lang="ts">
 import svgNames from 'virtual:svg-icons-names'
+
+defineOptions({ name: 'ViewSvg1' })
 
 const svgName = (value: string): string => value.replace(/^icon-/, '')
 </script>

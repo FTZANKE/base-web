@@ -1,4 +1,6 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
+import { useTitle } from '@vueuse/core'
 import NProgress from '@/hooks/useNprogress'
 import { ElMessage } from 'element-plus'
 import { useGlobalStore } from '@/stores'
@@ -7,8 +9,8 @@ import { staticRouter, errorRouter } from './modules/StaticRouter'
 
 // 忽略从modules导入的路由
 const ignoreRoutes = ['ErrorRoutes', 'StaticRoutes']
-// 自动导入modules下的路由
-const modulesRoutes = (import.meta.glob('./modules/*.ts', { eager: true }) || {}) as { [key: string]: any }
+// 自动寻找 modules 下, 文件命名为 *Router.ts 的路由
+const modulesRoutes = (import.meta.glob('./modules/*Router.ts', { eager: true }) || {}) as { [key: string]: any }
 const modules = []
 Object.keys(modulesRoutes).forEach(route => {
   const data = modulesRoutes[route].default || modulesRoutes[route]

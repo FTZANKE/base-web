@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import LayoutSidebar from '@/Layout/Sidebar/index.vue'
-import LayoutHeader from '@/Layout/Header/index.vue'
+import { computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { useWindowSize } from '@vueuse/core'
+import LayoutSidebar from './Sidebar/index.vue'
+import LayoutHeader from './Header/index.vue'
 import { hasOwnDefault } from '@/utils'
 import { useGlobalStore } from '@/stores'
 
@@ -18,13 +21,13 @@ watch(
 // 侧边栏宽度
 const asideWidth = computed(() => (isCollapse.value ? '64px' : '200px'))
 // 通过路由元信息控制是否显示头部
-const isShowHeader = computed(() => hasOwnDefault(route?.meta, 'showHeader', true))
+const isShowHeader = computed(() => hasOwnDefault(route.meta, 'showHeader', true))
 // 通过路由元信息控制是否显示侧边栏
-const isShowAside = computed(() => hasOwnDefault(route?.meta, 'showAside', true))
+const isShowAside = computed(() => hasOwnDefault(route.meta, 'showAside', true))
 // 通过路由元信息控制是否显示底部
-const isShowFooter = computed(() => hasOwnDefault(route?.meta, 'showFooter', true))
+const isShowFooter = computed(() => hasOwnDefault(route.meta, 'showFooter', true))
 // 通过路由元信息控制是否缓存页面
-const isKeepAlive = computed(() => hasOwnDefault(route?.meta, 'keepAlive', false))
+const isKeepAlive = computed(() => hasOwnDefault(route.meta, 'keepAlive', false))
 </script>
 <template>
   <el-container class="layout">

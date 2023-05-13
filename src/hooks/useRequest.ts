@@ -38,7 +38,6 @@ Request.interceptors.request.use(
       ...config.headers,
       ...{
         'Content-Type': $ContentType[hasOwnDefault(config, 'Content-Type', 'json')],
-        'token': globalStore.token,
       },
       ...hasOwnDefault(config, 'extendHeaders', {}),
     }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { CSSProperties } from 'vue'
+import { computed } from 'vue'
+import type { CSSProperties } from 'vue'
 
 const props = withDefaults(
   defineProps<{
@@ -15,9 +16,7 @@ const props = withDefaults(
     prefix: 'icon-',
   }
 )
-const symbolId = computed(() => {
-  return '#' + props.prefix + props.name
-})
+const symbolId = computed(() => '#' + props.prefix + props.name)
 </script>
 
 <template>

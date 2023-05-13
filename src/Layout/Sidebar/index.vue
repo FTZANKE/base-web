@@ -1,7 +1,11 @@
-<script setup lang="ts" name="Sidebar">
-import NestedSidebars from '@/Layout/Sidebar/nestedSidebars.vue'
+<script setup lang="ts">
+import { ref, toRef } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import NestedSidebars from './nestedSidebars.vue'
 import sidebarData from './sidebar.json'
 import { MenuList } from '@/Layout/interface'
+
+defineOptions({ name: 'Sidebar' })
 
 const route = useRoute()
 const router = useRouter()

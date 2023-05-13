@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
 import { useGlobalStore } from '@/stores'
 
 const globalStore = useGlobalStore()

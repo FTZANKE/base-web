@@ -1,4 +1,6 @@
+import { createPinia, defineStore } from 'pinia'
 import { createPersistedState } from 'pinia-plugin-persistedstate'
+import type { GlobalState as typeGlobalStore } from '@/stores/interface'
 
 const pinia = createPinia().use(
   createPersistedState({
@@ -7,15 +9,6 @@ const pinia = createPinia().use(
 )
 
 export default pinia
-
-interface GlobalState {
-  loading: boolean
-  token: string
-  locale: string | 'zh_CN' | 'en_US'
-  size: string | 'large' | 'default' | 'small'
-  message: { max: number }
-  isCollapse: boolean
-}
 
 export const useGlobalStore = defineStore('Global', {
   state: () => ({
@@ -28,7 +21,7 @@ export const useGlobalStore = defineStore('Global', {
   }),
   getters: {},
   actions: {
-    setGlobalState(key: keyof GlobalState, val: GlobalState[keyof GlobalState]) {
+    setGlobalState(key: keyof typeGlobalStore, val: typeGlobalStore[keyof typeGlobalStore]) {
       this.$patch({ [key]: val })
     },
   },

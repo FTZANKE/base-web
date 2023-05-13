@@ -14,10 +14,13 @@
   </template>
 </template>
 
-<script setup lang="ts" name="NestedSidebars">
-import NestedSidebars from '@/Layout/Sidebar/nestedSidebars.vue'
+<script setup lang="ts">
+import { toRef } from 'vue'
+import NestedSidebars from './nestedSidebars.vue'
 import { checkEmpty } from '@/utils'
 import { MenuList } from '@/Layout/interface'
+
+defineOptions({ name: 'NestedSidebars' })
 
 const props = defineProps<{
   data: MenuList[]

@@ -1,4 +1,4 @@
-import { RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import Layout from '@/Layout/index.vue'
 
 export const staticRouter: RouteRecordRaw[] = [
@@ -10,7 +10,7 @@ export const staticRouter: RouteRecordRaw[] = [
         component: () => import('@/views/redirect.vue'),
       },
     ],
-  }, // 重定向
+  },
   {
     path: '/',
     component: Layout,
@@ -25,13 +25,13 @@ export const staticRouter: RouteRecordRaw[] = [
         },
       },
     ],
-  }, // 首页
+  },
   {
     path: '/login',
     name: 'Login',
     component: () => import('@/views/Login/index.vue'),
     meta: { title: '登录' },
-  }, // 登录
+  },
 ]
 
 export const errorRouter: RouteRecordRaw[] = [
@@ -40,10 +40,9 @@ export const errorRouter: RouteRecordRaw[] = [
     name: '404',
     component: () => import('@/views/Error/404.vue'),
     meta: { title: '404' },
-  }, // 404
+  },
   {
     path: '/:pathMatch(.*)*',
-    component: () => import('@/views/Error/404.vue'),
-    meta: { title: '404' },
-  }, // 404
+    redirect: '/404',
+  },
 ]
